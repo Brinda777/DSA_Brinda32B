@@ -26,11 +26,12 @@ public class Friendrequestresponse extends javax.swing.JFrame {
     public Friendrequestresponse() {
         initComponents();
         setResizable(false);
-        list1.add(ob.uname[ob.frqtrack[ob.friendindex]]);
-        friendrequeststring.setText("Username: "+ob.uname[ob.frqtrack[ob.friendindex]]+"\n\n"
-                                    +"Institue: "+ob.education_institute[ob.frqtrack[ob.friendindex]]+"\n\n"
-                                    +"Sex: "+ob.sex[ob.frqtrack[ob.friendindex]]+"\n\n"
-                                    +"Work: "+ob.working[ob.frqtrack[ob.friendindex]]+"\n\n");
+        list1.add("Bibek");
+        friendrequeststring.setText("Username: "+"Bibek"+"\n\n"
+                                    +"Institue: "+"Softwarica"+"\n\n"
+                                    +"Sex: "+"Male"+"\n\n"
+                                    +"Work: "+"Softwarica"+"\n\n" 
+                                    +"Email: "+"bibek@gmail.com"+"\n\n");
     }
 
     /**
@@ -209,16 +210,6 @@ public class Friendrequestresponse extends javax.swing.JFrame {
     }//GEN-LAST:event_friendrequeststringActionPerformed
 
     private void acceptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acceptActionPerformed
-        try {
-            // TODO add your handling code here:
-            ob.confirmFrnd(Integer.toString(ob.frqtrack[ob.friendindex]), Integer.toString(ob1.userpos));
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Friendrequestresponse.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(Friendrequestresponse.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        ob.frndchecker[ob.frqtrack[ob.friendindex]][ob1.userpos] = 1;
-        ob.frndchecker[ob1.userpos][ob.frqtrack[ob.friendindex]] = 1;
         JOptionPane.showMessageDialog(null, "Friend Request Accepted");
         this.setVisible(false);
         try {
@@ -232,17 +223,6 @@ public class Friendrequestresponse extends javax.swing.JFrame {
 
     private void ignoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ignoreActionPerformed
         // TODO add your handling code here:
-        
-         try {
-            // TODO add your handling code here:
-            ob.removeFrnd(Integer.toString(ob.frqtrack[ob.friendindex]), Integer.toString(ob1.userpos));
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Friendrequestresponse.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(Friendrequestresponse.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        ob.frndchecker[ob.frqtrack[ob.friendindex]][ob1.userpos] = 0;
-        ob.frndchecker[ob1.userpos][ob.frqtrack[ob.friendindex]] = 0;
         JOptionPane.showMessageDialog(null, "Friend Request Ignored");
         this.setVisible(false);
         try {
@@ -306,8 +286,6 @@ public class Friendrequestresponse extends javax.swing.JFrame {
 
     private void list1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_list1ActionPerformed
         // TODO add your handling code here:
-        ob.searchindex=ob.friendindex;
-        ob.sbutrack[ob.searchindex]=ob.frqtrack[ob.friendindex];
         this.setVisible(false);
         try {
             new ProfileOthers().setVisible(true);

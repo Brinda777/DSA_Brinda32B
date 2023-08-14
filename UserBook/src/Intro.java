@@ -153,13 +153,15 @@ public class Intro extends javax.swing.JFrame {
             if(user.compareTo(s.uname[i])==0&&pass.compareTo(s.pass[i])==0)
             {
                 userpos=i;
-                this.setVisible(false);
-                new Home().setVisible(true);
+                
                 j=1;
                 break;
             }
             
         }
+        
+        this.setVisible(false);
+        new Home().setVisible(true);
         
        
         if(j==0)

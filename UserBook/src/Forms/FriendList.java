@@ -31,67 +31,7 @@ public class FriendList extends javax.swing.JFrame {
         int i = 0, x = 0;
         //String S="ads";
        // ob.searchindex;
-        for (i = 0; i < ob.total; i++) {
-            if(i==ob.sbutrack[ob.searchindex])continue;
-            String[] result = new String[2];
-            String[] result2 = new String[2];
-            result = ob.getFrndReqInfo(Integer.toString(i), Integer.toString( ob.sbutrack[ob.searchindex]));
-            result2 = ob.getFrndReqInfo(Integer.toString( ob.sbutrack[ob.searchindex]), Integer.toString(i));
-            //System.out.println(result[0]+"   "+result[1]);
-            /*if (result[0].compareTo("9") == 0) {
-                continue;
-            } else {
-                ob.frndchecker[i][ ob.sbutrack[ob.searchindex]] = Integer.parseInt(result[0]);
 
-                ob.frndchecker[ ob.sbutrack[ob.searchindex]][i] = Integer.parseInt(result[1]);
-
-                //System.out.println(ob.frndchecker[k][ob1.userpos]+"   "+ob.frndchecker[ob1.userpos][k]);
-            }*/
-            
-             if((result[0].compareTo("1")==0&&result[1].compareTo("1")==0)||(result2[0].compareTo("1")==0&&result2[1].compareTo("1")==0))
-        {
-            ob.frndchecker[ob.sbutrack[ob.searchindex]][i]=1;
-           
-            ob.frndchecker[i][ob.sbutrack[ob.searchindex]]=1;
-        }
-        else if((result[0].compareTo("1")==0&&result[1].compareTo("0")==0))
-        {
-            ob.frndchecker[i][ob.sbutrack[ob.searchindex]]=Integer.parseInt(result[1]);
-            ob.frndchecker[ob.sbutrack[ob.searchindex]][i]=Integer.parseInt(result[0]);
-           
-            
-            //System.out.println(ob.frndchecker[k][ob1.userpos]+"   "+ob.frndchecker[ob1.userpos][k]);
-        }
-        else if((result2[0].compareTo("1")==0&&result2[1].compareTo("0")==0))
-        {
-            
-            ob.frndchecker[ob.sbutrack[ob.searchindex]][i]=Integer.parseInt(result[0]);
-            ob.frndchecker[i][ob.sbutrack[ob.searchindex]]=Integer.parseInt(result[1]);
-           
-            
-            //System.out.println(ob.frndchecker[k][ob1.userpos]+"   "+ob.frndchecker[ob1.userpos][k]);
-        }
-        else 
-        {
-            
-            ob.frndchecker[ob.sbutrack[ob.searchindex]][i]=0;
-            ob.frndchecker[i][ob.sbutrack[ob.searchindex]]=0;
-           
-            
-            //System.out.println(ob.frndchecker[k][ob1.userpos]+"   "+ob.frndchecker[ob1.userpos][k]);
-        }
-        
-            
-            
-            
-            
-           
-            if (ob.frndchecker[i][ ob.sbutrack[ob.searchindex]] == 1 && ob.frndchecker[ ob.sbutrack[ob.searchindex]][i] == 1) {
-                list1.add(ob.uname[i]);
-                ob.frndlisttrack[x] = i;
-                x++;
-            }
-        }
 
 
     }

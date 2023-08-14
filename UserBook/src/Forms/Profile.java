@@ -42,20 +42,20 @@ public class Profile extends javax.swing.JFrame {
          jTextField9.setVisible(false);
          jDesktopPane1.setVisible(false);
          
-           ob.loadnewnotification(Integer.toString(ob1.userpos));
+//           ob.loadnewnotification(Integer.toString(ob1.userpos));
       
-        if(ob.messagetrack[ob1.userpos]!=0)
-        {
-            
-            Inbox.setText("Inbox(new)");
-        }
+//        if(ob.messagetrack[ob1.userpos]!=0)
+//        {
+//            
+//            Inbox.setText("Inbox(new)");
+//        }
          ob.loadInfo(Integer.toString(ob1.userpos));
-         username.setText("Username: "+ob.uname[ob1.userpos]);
-         institute.setText("Institue: "+ob.education_institute[ob1.userpos]);
-         sex.setText("Sex: "+ob.sex[ob1.userpos]);
-         work.setText("Work: "+ob.working[ob1.userpos]);
-         email.setText("Email: "+ob.email[ob1.userpos]);
-         DOB.setText("Date of Birth: "+ob.date_of_birth[ob1.userpos]);
+         username.setText("Username: "+"Brinda");
+         institute.setText("Institue: "+"N/A");
+         sex.setText("Sex: "+"Female");
+         work.setText("Work: "+"N/A");
+         email.setText("Email: "+"brinda.bhattrai99@gmail.com");
+         DOB.setText("Date of Birth: "+"N/A");
          
          id = Integer.toString(ob1.userpos);
 
@@ -87,10 +87,6 @@ public class Profile extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Inbox = new javax.swing.JButton();
-        Status = new javax.swing.JButton();
-        Wall = new javax.swing.JButton();
-        Friendlist = new javax.swing.JButton();
         email = new javax.swing.JLabel();
         work = new javax.swing.JLabel();
         DOB = new javax.swing.JLabel();
@@ -114,42 +110,6 @@ public class Profile extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        Inbox.setBackground(new java.awt.Color(0, 102, 102));
-        Inbox.setForeground(new java.awt.Color(255, 255, 255));
-        Inbox.setText("Inbox");
-        Inbox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                InboxActionPerformed(evt);
-            }
-        });
-
-        Status.setBackground(new java.awt.Color(0, 102, 102));
-        Status.setForeground(new java.awt.Color(255, 255, 255));
-        Status.setText("Check Status");
-        Status.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                StatusActionPerformed(evt);
-            }
-        });
-
-        Wall.setBackground(new java.awt.Color(0, 102, 102));
-        Wall.setForeground(new java.awt.Color(255, 255, 255));
-        Wall.setText("Check Wall");
-        Wall.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                WallActionPerformed(evt);
-            }
-        });
-
-        Friendlist.setBackground(new java.awt.Color(0, 102, 102));
-        Friendlist.setForeground(new java.awt.Color(255, 255, 255));
-        Friendlist.setText("Friend List");
-        Friendlist.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FriendlistActionPerformed(evt);
-            }
-        });
 
         email.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         email.setText("Email:");
@@ -223,7 +183,7 @@ public class Profile extends javax.swing.JFrame {
                 .addComponent(home, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(profile, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 991, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -253,8 +213,8 @@ public class Profile extends javax.swing.JFrame {
             }
         });
 
+        jDesktopPane2.add(jLabel3);
         jLabel3.setBounds(20, 20, 200, 180);
-        jDesktopPane2.add(jLabel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         uploadImage.setText("Upload  Image");
         uploadImage.addActionListener(new java.awt.event.ActionListener() {
@@ -270,8 +230,8 @@ public class Profile extends javax.swing.JFrame {
             }
         });
 
+        jDesktopPane1.add(jLabel7);
         jLabel7.setBounds(30, 50, 120, 90);
-        jDesktopPane1.add(jLabel7, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -293,36 +253,29 @@ public class Profile extends javax.swing.JFrame {
                             .addComponent(work, javax.swing.GroupLayout.PREFERRED_SIZE, 559, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(DOB, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(140, 140, 140)
+                        .addGap(171, 171, 171)
                         .addComponent(ShowBut)
                         .addGap(51, 51, 51)
                         .addComponent(ChangePic))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
+                        .addGap(51, 51, 51)
                         .addComponent(Edit, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addComponent(uploadImage))
-                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(90, 90, 90)
-                                .addComponent(imageSave)))
-                        .addGap(13, 13, 13)
-                        .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(178, 178, 178)
-                .addComponent(Inbox, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(115, 115, 115)
-                .addComponent(Status, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(133, 133, 133)
-                .addComponent(Wall, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(124, 124, 124)
-                .addComponent(Friendlist, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(61, 61, 61)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(uploadImage))
+                                .addGap(26, 26, 26))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(imageSave)
+                                .addGap(40, 40, 40)))
+                        .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -343,7 +296,7 @@ public class Profile extends javax.swing.JFrame {
                                 .addComponent(institute, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(13, 13, 13)
                                 .addComponent(sex, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(13, 13, 13)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(work, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -358,21 +311,15 @@ public class Profile extends javax.swing.JFrame {
                         .addComponent(Edit, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(79, 79, 79)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(60, 60, 60)
                                 .addComponent(uploadImage, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(20, 20, 20)
+                                .addGap(28, 28, 28)
                                 .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(20, 20, 20)
-                                .addComponent(imageSave))
-                            .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(86, 86, 86)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Inbox, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Status, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Wall, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Friendlist, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(59, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addComponent(imageSave)))))
+                .addContainerGap(189, Short.MAX_VALUE))
         );
 
         pack();
@@ -390,20 +337,6 @@ public class Profile extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_EditActionPerformed
-
-    private void FriendlistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FriendlistActionPerformed
-        // TODO add your handling code here:
-        ob.searchindex=ob1.userpos;
-        ob.sbutrack[ob.searchindex]=ob1.userpos;
-        this.setVisible(false);
-        try {
-            new FriendList().setVisible(true);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Profile.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(Profile.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_FriendlistActionPerformed
 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
         // TODO add your handling code here:
@@ -431,61 +364,9 @@ public class Profile extends javax.swing.JFrame {
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         // TODO add your handling code here:
-         try {
-            // TODO add your handling code here:
-            ob.updateOnline(Integer.toString(ob1.userpos),(ob.birthday[ob1.userpos]),("0"));
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-        }
         this.setVisible(false);
         new Intro().setVisible(true);
     }//GEN-LAST:event_logoutActionPerformed
-
-    private void StatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StatusActionPerformed
-        // TODO add your handling code here:
-          this.setVisible(false);
-        try {
-            new StatusMy().setVisible(true);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Profile.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(Profile.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_StatusActionPerformed
-
-    private void WallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WallActionPerformed
-        // TODO add your handling code here:
-        this.setVisible(false);
-        try {
-            new Mywall().setVisible(true);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Profile.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(Profile.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_WallActionPerformed
-
-    private void InboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InboxActionPerformed
-        // TODO add your handling code here:
-         ob.messagetrack[ob1.userpos]=0;
-         try {
-            ob.updatenewnotification(Integer.toString(ob1.userpos), Integer.toString(ob.Friendnotificationtrack[ob1.userpos]), Integer.toString(ob.Notificationtrack[ob1.userpos]), Integer.toString(ob. messagetrack[ob1.userpos]), Integer.toString(ob.newevent[ob1.userpos]));
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Otherswall.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(Otherswall.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        this.setVisible(false);
-        try {
-            new Inboxsubject().setVisible(true);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_InboxActionPerformed
 
     private void ShowButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowButActionPerformed
         // TODO add your handling code here:
@@ -617,11 +498,7 @@ public class Profile extends javax.swing.JFrame {
     private javax.swing.JButton ChangePic;
     private javax.swing.JLabel DOB;
     private javax.swing.JButton Edit;
-    private javax.swing.JButton Friendlist;
-    private javax.swing.JButton Inbox;
     private javax.swing.JButton ShowBut;
-    private javax.swing.JButton Status;
-    private javax.swing.JButton Wall;
     private javax.swing.JLabel email;
     private javax.swing.JButton home;
     private javax.swing.JButton imageSave;

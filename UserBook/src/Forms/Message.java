@@ -212,13 +212,7 @@ public class Message extends javax.swing.JFrame {
         int t = Integer.parseInt(totalM);
         t++;
         int tm = 0;
-        try {
-            tm = Integer.parseInt(ob.getdbMessageNo());
-        } catch (SQLException ex) {
-            Logger.getLogger(Otherswall.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Otherswall.class.getName()).log(Level.SEVERE, null, ex);
-        }
+
         tm++;
         String time = new SimpleDateFormat("dd/MM/yyyy_HH:mm:ss").format(Calendar.getInstance().getTime());
         try {
@@ -228,14 +222,7 @@ public class Message extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Message.class.getName()).log(Level.SEVERE, null, ex);
         }
-         try {
-            ob.update_Total_dbMessage(Integer.toString(tm));
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Otherswall.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(Otherswall.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+    
         try {
             ob.update_TotalMessage(Integer.toString(ob.sbutrack[ob.searchindex]), Integer.toString(t));
         } catch (ClassNotFoundException ex) {
@@ -245,13 +232,6 @@ public class Message extends javax.swing.JFrame {
         }
         ob.messagetrack[ob.sbutrack[ob.searchindex]]++;
       
-         try {
-            ob.updatenewnotification(Integer.toString(ob.sbutrack[ob.searchindex]), Integer.toString(ob.Friendnotificationtrack[ob.sbutrack[ob.searchindex]]), Integer.toString(ob.Notificationtrack[ob.sbutrack[ob.searchindex]]), Integer.toString(ob. messagetrack[ob.sbutrack[ob.searchindex]]), Integer.toString(ob.newevent[ob.sbutrack[ob.searchindex]]));
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Otherswall.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(Otherswall.class.getName()).log(Level.SEVERE, null, ex);
-        }
         /*ob.messagesubject[ob.sbutrack[ob.searchindex]][ob.inboxlimit[ob.sbutrack[ob.searchindex]]]=subjectbox.getText();
         ob.message[ob.sbutrack[ob.searchindex]][ob.inboxlimit[ob.sbutrack[ob.searchindex]]]=messagebox.getText();
         ob.messagesender[ob.sbutrack[ob.searchindex]][ob.inboxlimit[ob.sbutrack[ob.searchindex]]]=ob.uname[ob1.userpos];

@@ -399,22 +399,6 @@ public class SignUp {
         ResultSet rs = stm.executeQuery(query);
 
         int uId = Integer.parseInt(Id);
-        while (rs.next()) {
-            if (Id.compareTo(rs.getString("u_ID")) == 0) {
-                //int statNo = Integer.parseInt(rs.getString("Status_No"));
-                //  ob1.userpos=Integer.parseInt(rs.getString("u_ID"));
-                educationprivacy[uId] = Integer.parseInt(rs.getString("education"));
-                emailprivacy[uId] = Integer.parseInt(rs.getString("email"));
-                workprivacy[uId] = Integer.parseInt(rs.getString("work"));
-                friendlistprivacy[uId] = Integer.parseInt(rs.getString("friendlist"));
-                wallprivacy[uId] = Integer.parseInt(rs.getString("wall"));
-                statusprivacy[uId] = Integer.parseInt(rs.getString("status"));
-                DOBprivacy[uId] = Integer.parseInt(rs.getString("dob"));
-                //  privacy[uId][7] = Integer.parseInt(rs.getString("type"));
-                //privacy[uId][8] = Integer.parseInt(rs.getString("education"));
-                //System.out.println(status[uId][statNo]);
-            }
-        }
 
     }
     
@@ -994,35 +978,35 @@ public class SignUp {
 
     }
 
-    public void loadnewnotification(String Id) throws ClassNotFoundException, SQLException {
-        Connection con = sqlConnection();
-        Statement stm = con.createStatement();
-        String query = "select * from newnotification WHERE id = '" + Id + "'";
-        ResultSet rs = stm.executeQuery(query);
-        int i = 0;
-        int ui = Integer.parseInt(Id);
-        while (rs.next()) {
-
-            messagetrack[ui] = Integer.parseInt(rs.getString("newinbox"));
-            Notificationtrack[ui] = Integer.parseInt(rs.getString("newnotify"));
-            Friendnotificationtrack[ui] = Integer.parseInt(rs.getString("newfrndreq"));
-
-
-            //    System.out.println(message[ui][i]);
-            i++;
-        }
-       // inboxlimit[ui] = i;
-        /*
-         * total = i; if(ob.messagetrack[ob1.userpos]!=0) {
-         * Inbox.setText("Inbox(new)"); }
-         * if(ob.Notificationtrack[ob1.userpos]!=0) {
-         * Notifications.setText("Notifications(new)"); }
-         * if(ob.Friendnotificationtrack[ob1.userpos]!=0) {
-         * Friendreq.setText("Friend Requests(new)"); 
-        }
-         */
-
-    }
+//    public void loadnewnotification(String Id) throws ClassNotFoundException, SQLException {
+//        Connection con = sqlConnection();
+//        Statement stm = con.createStatement();
+//        String query = "select * from newnotification WHERE id = '" + Id + "'";
+//        ResultSet rs = stm.executeQuery(query);
+//        int i = 0;
+//        int ui = Integer.parseInt(Id);
+//        while (rs.next()) {
+//
+//            messagetrack[ui] = Integer.parseInt(rs.getString("newinbox"));
+//            Notificationtrack[ui] = Integer.parseInt(rs.getString("newnotify"));
+//            Friendnotificationtrack[ui] = Integer.parseInt(rs.getString("newfrndreq"));
+//
+//
+//            //    System.out.println(message[ui][i]);
+//            i++;
+//        }
+//       // inboxlimit[ui] = i;
+//        /*
+//         * total = i; if(ob.messagetrack[ob1.userpos]!=0) {
+//         * Inbox.setText("Inbox(new)"); }
+//         * if(ob.Notificationtrack[ob1.userpos]!=0) {
+//         * Notifications.setText("Notifications(new)"); }
+//         * if(ob.Friendnotificationtrack[ob1.userpos]!=0) {
+//         * Friendreq.setText("Friend Requests(new)"); 
+//        }
+//         */
+//
+//    }
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         SignUp s = new SignUp();

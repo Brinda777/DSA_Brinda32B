@@ -29,7 +29,7 @@ public class SignUpI extends javax.swing.JFrame {
     public SignUpI() {
         initComponents();
         setResizable(false);
-        gender.setEditable(false);
+        gender.setEditable(true);
     }
 
     /**
@@ -65,6 +65,8 @@ public class SignUpI extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        fullname1 = new javax.swing.JTextField();
 
         jRadioButtonMenuItem1.setSelected(true);
         jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
@@ -82,7 +84,7 @@ public class SignUpI extends javax.swing.JFrame {
                 fullnameActionPerformed(evt);
             }
         });
-        getContentPane().add(fullname, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 180, 239, -1));
+        getContentPane().add(fullname, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 190, 239, -1));
 
         username.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         username.addActionListener(new java.awt.event.ActionListener() {
@@ -90,10 +92,9 @@ public class SignUpI extends javax.swing.JFrame {
                 usernameActionPerformed(evt);
             }
         });
-        getContentPane().add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 230, 239, -1));
+        getContentPane().add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 240, 239, -1));
 
         gender.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        gender.setText("Male");
         gender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 genderActionPerformed(evt);
@@ -102,8 +103,8 @@ public class SignUpI extends javax.swing.JFrame {
         getContentPane().add(gender, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 360, 239, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel2.setText("Full Name");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(904, 179, -1, -1));
+        jLabel2.setText("Email");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 200, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel6.setText("Username");
@@ -191,7 +192,7 @@ public class SignUpI extends javax.swing.JFrame {
         getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 460, 245, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel8.setText("teachers in Softwarica with UserBOOK");
+        jLabel8.setText("teachers in IUT with IBOOK");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(406, 178, 412, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -222,6 +223,18 @@ public class SignUpI extends javax.swing.JFrame {
         jLabel15.setForeground(new java.awt.Color(102, 102, 102));
         jLabel15.setText("As well as reply messages");
         getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 370, -1, -1));
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel16.setText("Full Name");
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 160, -1, -1));
+
+        fullname1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        fullname1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fullname1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(fullname1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 150, 239, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -354,15 +367,19 @@ public class SignUpI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_confirmpasswordActionPerformed
 
-    private void genderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genderActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_genderActionPerformed
-
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
         new Intro().setVisible(true);
     }//GEN-LAST:event_logoutActionPerformed
+
+    private void fullname1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fullname1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fullname1ActionPerformed
+
+    private void genderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genderActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_genderActionPerformed
 
     /**
      * @param args the command line arguments
@@ -407,6 +424,7 @@ public class SignUpI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPasswordField confirmpassword;
     private javax.swing.JTextField fullname;
+    private javax.swing.JTextField fullname1;
     private javax.swing.JTextField gender;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -416,6 +434,7 @@ public class SignUpI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

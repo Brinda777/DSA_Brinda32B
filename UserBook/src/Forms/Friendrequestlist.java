@@ -26,35 +26,8 @@ Intro ob1=new Intro();
     public Friendrequestlist() throws ClassNotFoundException, SQLException {
         initComponents();
         setResizable(false);
-         int k,j=0,x;
-   ob.newfrnd[ob1.userpos]=0;int f=0;
-   
-   
-   
-    for(k=0; k<30; k++)
-    {
-        String[] result = new String[2];
-        result = ob.getFrndReqInfo(Integer.toString(k), Integer.toString(ob1.userpos));
-        //System.out.println(result[0]+"   "+result[1]);
-        if(result[0].compareTo("9")==0){
-            continue;
-        }
-        else
-        {
-            ob.frndchecker[k][ob1.userpos]=Integer.parseInt(result[0]);
-           
-            ob.frndchecker[ob1.userpos][k]=Integer.parseInt(result[1]);
-            
-             //System.out.println(ob.frndchecker[k][ob1.userpos]+"   "+ob.frndchecker[ob1.userpos][k]);
-        }
-        if(ob.frndchecker[k][ob1.userpos]==1&&ob.frndchecker[ob1.userpos][k]==0)
-        {
-            list1.add(ob.uname[k]+" has sent you a friend request");
-            ob.frqtrack[f]=k;
-            ob.frqstring[f]=ob.uname[k]+" has sent you a friend request";
-            f++;
-        }
-    }
+        list1.add("Ram"+" has sent you a friend request");
+        list1.add("Bibek"+" has sent you a friend request");
     }
 
     /**

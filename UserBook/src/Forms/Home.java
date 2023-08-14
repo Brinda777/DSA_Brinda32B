@@ -25,13 +25,15 @@ public class Home extends javax.swing.JFrame {
      */
     SignUp ob = new SignUp();
     Intro ob1 = new Intro();
-    NewsFeed ob2=new NewsFeed();
+//    NewsFeed ob2=new NewsFeed();
     public Home() throws ClassNotFoundException, SQLException {
         initComponents();
         setResizable(false);
-       // ob.loadOnline(ob1.userpos);
-        ob.loadnewnotification(Integer.toString(ob1.userpos));
-        jLabel1.setText("Username: " + ob.uname[ob1.userpos]);
+        
+//        list1.add("Bibek");
+        list1.add("Asmita");
+        list1.add("Kiran");
+        jLabel1.setText("Username: " + "Brinda");
         if(ob.messagetrack[ob1.userpos]!=0)
         {
             Inbox.setForeground(Color.yellow);
@@ -58,21 +60,21 @@ public class Home extends javax.swing.JFrame {
         for (i = 0; i < ob.total; i++) {
             String[] result = new String[2];
             String[] result2 = new String[2];
-            try {
-                result = ob.getFrndReqInfo(Integer.toString(i), Integer.toString(ob1.userpos));
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (SQLException ex) {
-                Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            try {
-                result2 = ob.getFrndReqInfo(Integer.toString(ob1.userpos), Integer.toString(i));
-                //System.out.println(result[0]+"   "+result[1]);
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (SQLException ex) {
-                Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-            }
+//            try {
+//                result = ob.getFrndReqInfo(Integer.toString(i), Integer.toString(ob1.userpos));
+//            } catch (ClassNotFoundException ex) {
+//                Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+//            } catch (SQLException ex) {
+//                Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//            try {
+//                result2 = ob.getFrndReqInfo(Integer.toString(ob1.userpos), Integer.toString(i));
+//                //System.out.println(result[0]+"   "+result[1]);
+//            } catch (ClassNotFoundException ex) {
+//                Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+//            } catch (SQLException ex) {
+//                Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+//            }
 
 
             /*if (result[0].compareTo("9") == 0) {
@@ -82,14 +84,14 @@ public class Home extends javax.swing.JFrame {
                 }
             }
             if (i == ob1.userpos || (ob.frndchecker[ob1.userpos][i] == 1 && ob.frndchecker[i][ob1.userpos] == 1)) {*/
-            if((result[0].compareTo("1")==0&&result[1].compareTo("1")==0)||(result2[0].compareTo("1")==0&&result2[1].compareTo("1")==0))
-            {  
-                ob.loadOnline(Integer.toString(i));
-                if(ob.online[i]==1){
-                ob.sbutrack[f] = i;
-                list1.add(ob.uname[i]);
-                f++;}
-            }
+//            if((result[0].compareTo("1")==0&&result[1].compareTo("1")==0)||(result2[0].compareTo("1")==0&&result2[1].compareTo("1")==0))
+//            {  
+//                ob.loadOnline(Integer.toString(i));
+//                if(ob.online[i]==1){
+//                ob.sbutrack[f] = i;
+//                list1.add(ob.uname[i]);
+//                f++;}
+//            }
         }
      //   if(ob.statustrack[ob1.userpos]!=0)
      //   mystatus.setText("My Status:\n "+ ob.status[ob1.userpos][ob.statustrack[ob1.userpos]-1]);
@@ -254,9 +256,9 @@ public class Home extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
+                .addGap(54, 54, 54)
                 .addComponent(Newsfeed, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(74, 74, 74)
+                .addGap(63, 63, 63)
                 .addComponent(Profile, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(84, 84, 84)
                 .addComponent(Inbox, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -361,71 +363,15 @@ public class Home extends javax.swing.JFrame {
 
     private void PostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PostActionPerformed
         
-        String statusNo = null;
-        try {
-            // TODO add your handling code here:
-
-            statusNo = ob.getStatusTrack(Integer.toString(Intro.userpos));
-        } catch (SQLException ex) {
-            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        SignUp.statustrack[Intro.userpos]=Integer.parseInt(statusNo);
-        //System.out.println(statusNo);
-        ob.status[ob1.userpos][ob.statustrack[ob1.userpos]] = Statusbox.getText();
-       
-        statusNo = Integer.toString(SignUp.statustrack[Intro.userpos]);
-        Statusbox.setText("");
-       
+        // TODO add your handling code here:
         
-        int ts = 0;
-        try {
-            ts = Integer.parseInt(ob.getdbStatusNo());
-        } catch (SQLException ex) {
-            Logger.getLogger(Otherswall.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Otherswall.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        ts++;
-        String time = new SimpleDateFormat("dd/MM/yyyy_HH:mm:ss").format(Calendar.getInstance().getTime());
-        try {
-            ob.addStatus(Integer.toString(ts),Integer.toString(Intro.userpos),Integer.toString(SignUp.statustrack[Intro.userpos]), SignUp.status[Intro.userpos][SignUp.statustrack[Intro.userpos]],time);
-          //  this.setVisible(false);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-        }
+       ob.status[ob1.userpos][ob.statustrack[ob1.userpos]]=Statusbox.getText();
+       ob.statustrack[ob1.userpos]++;
+       Statusbox.setText("");
+        JOptionPane.showMessageDialog(null,   "Status Added Succesully" ); 
+       this.setVisible(false);
         
-         try {
-            ob.update_Total_dbStatus(Integer.toString(ts));
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Otherswall.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(Otherswall.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        
-        ++ob.statustrack[ob1.userpos];
-        try {
-            ob.update_TotalStatus(Integer.toString(Intro.userpos),Integer.toString(SignUp.statustrack[Intro.userpos]));
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-        }
-         JOptionPane.showMessageDialog(null, "Status Updated Succesully");
-
-   //     new NewsFeed().setVisible(true);
-         this.setVisible(false);
-        try {
-            new Home().setVisible(true);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            new NewsFeed().setVisible(true);
 
     }//GEN-LAST:event_PostActionPerformed
 
@@ -444,19 +390,19 @@ public class Home extends javax.swing.JFrame {
     private void AppsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AppsActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        new Apps().setVisible(true);
+//        new Apps().setVisible(true);
     }//GEN-LAST:event_AppsActionPerformed
 
     private void NewsfeedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewsfeedActionPerformed
         // TODO add your handling code here:
-        this.setVisible(false);
-        try {
-            new NewsFeed().setVisible(true);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        this.setVisible(false);
+//        try {
+//            new NewsFeed().setVisible(true);
+//        } catch (ClassNotFoundException ex) {
+//            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (SQLException ex) {
+//            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }//GEN-LAST:event_NewsfeedActionPerformed
 
     private void ProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProfileActionPerformed
@@ -473,13 +419,7 @@ public class Home extends javax.swing.JFrame {
 
     private void InboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InboxActionPerformed
         ob.messagetrack[ob1.userpos]=0;
-         try {
-            ob.updatenewnotification(Integer.toString(ob1.userpos), Integer.toString(ob.Friendnotificationtrack[ob1.userpos]), Integer.toString(ob.Notificationtrack[ob1.userpos]), Integer.toString(ob. messagetrack[ob1.userpos]), Integer.toString(ob.newevent[ob1.userpos]));
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Otherswall.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(Otherswall.class.getName()).log(Level.SEVERE, null, ex);
-        }
+       
         this.setVisible(false);
         try {
             new Inboxsubject().setVisible(true);
@@ -500,13 +440,7 @@ public class Home extends javax.swing.JFrame {
     private void FriendreqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FriendreqActionPerformed
         // TODO add your handling code here:
         ob.Friendnotificationtrack[ob1.userpos]=0;
-           try {
-            ob.updatenewnotification(Integer.toString(ob1.userpos), Integer.toString(ob.Friendnotificationtrack[ob1.userpos]), Integer.toString(ob.Notificationtrack[ob1.userpos]), Integer.toString(ob. messagetrack[ob1.userpos]), Integer.toString(ob.newevent[ob1.userpos]));
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Otherswall.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(Otherswall.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
         this.setVisible(false);
         try {
             new Friendrequestlist().setVisible(true);
@@ -519,22 +453,9 @@ public class Home extends javax.swing.JFrame {
 
     private void NotificationsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NotificationsActionPerformed
         // TODO add your handling code here:
-       ob.Notificationtrack[ob1.userpos]=0;
-           try {
-            ob.updatenewnotification(Integer.toString(ob1.userpos), Integer.toString(ob.Friendnotificationtrack[ob1.userpos]), Integer.toString(ob.Notificationtrack[ob1.userpos]), Integer.toString(ob. messagetrack[ob1.userpos]), Integer.toString(ob.newevent[ob1.userpos]));
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Otherswall.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(Otherswall.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        this.setVisible(false);
-        try {
-            new Notifications().setVisible(true);
-        } catch (SQLException ex) {
-            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-        }
+       
+//        this.setVisible(false);
+       
     }//GEN-LAST:event_NotificationsActionPerformed
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
@@ -552,22 +473,20 @@ public class Home extends javax.swing.JFrame {
 
     private void EventsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EventsActionPerformed
         // TODO add your handling code here:
-        this.setVisible(false);
-        try {
-            new Event().setVisible(true);
-        } catch (SQLException ex) {
-            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        this.setVisible(false);
+//        try {
+//            new Event().setVisible(true);
+//        } catch (SQLException ex) {
+//            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (ClassNotFoundException ex) {
+//            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }//GEN-LAST:event_EventsActionPerformed
 
     private void list1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_list1ActionPerformed
         // TODO add your handling code here:
          int r;
         r = list1.getSelectedIndex();
-        ob.searchindex = r;
-        ob.newsfeedindex= ob.searchindex;
           this.setVisible(false);
         try {
             new ProfileOthers().setVisible(true);

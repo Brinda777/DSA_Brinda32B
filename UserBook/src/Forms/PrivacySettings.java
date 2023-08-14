@@ -40,9 +40,6 @@ ob.loadPrivacy(Integer.toString(ob1.userpos));
             educationprivacy.setSelectedIndex(1);
         }
 
-
-        //    
-
         if (ob.emailprivacy[ob1.userpos] == 0) {
             emailprivacy.setSelectedIndex(0);
         } else {
