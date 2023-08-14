@@ -191,7 +191,7 @@ public class SignUpI extends javax.swing.JFrame {
         getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 460, 245, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel8.setText("teachers in IUT with IBOOK");
+        jLabel8.setText("teachers in Softwarica with UserBOOK");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(406, 178, 412, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
